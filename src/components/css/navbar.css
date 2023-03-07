@@ -1,0 +1,10 @@
+.navbar-custom {
+    background: linear-gradient(to right, #FC5C7D, #6A82FB);
+  }
+.navbar-custom .form-control {
+    margin: 0 auto;
+}
+.logo-custom {
+      font-family: "Inter", sans-serif;
+      font-weight: 900;
+}
