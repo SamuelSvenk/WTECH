@@ -1,0 +1,24 @@
+.panel-default{
+    width: 1192px;
+    height: 315px;
+    background: #302D30;
+    border-radius: 15px;
+}
+.text-new{
+    color: white;
+    text-align: center;
+    font-size: 40px ;
+}
+.text-contacts{
+    font-size: 36px;
+    color: white;
+}
+.text-info{
+    color: white;
+    font-size: 36px;
+}
+.text-date{
+    text-align: center;
+    font-size: 36px;
+    color: white;
+}
