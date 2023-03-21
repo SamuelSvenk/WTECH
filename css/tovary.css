@@ -73,3 +73,58 @@
 .search-bar{
     width: 170;
 }
+.products{
+    overflow-y: scroll;
+    height: 530px;
+}
+.products::-webkit-scrollbar-track {
+    border: none;
+    padding: 2px 0;
+    background-color: #404040;
+}
+
+.products::-webkit-scrollbar {
+    width: 10px;
+}
+
+.products::-webkit-scrollbar-thumb {
+    border-radius: none;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #737272;
+    border: 1px solid #000;
+}
+.page-link {
+    background-color: transparent;
+    border: none;
+    color: white;
+} 
+.pagination {
+    display: flex;
+    justify-content: center;
+}
+.pagination li a:hover {
+    background-color: #262327;
+    border: none;
+    color: white;
+}
+.nav-sort{
+    background-color: transparent;
+    color: white;
+    border: 1px solid black;
+    border-radius: 15px;
+    width:auto;
+}
+.drop-menu{
+    background-color: #262327;
+}
+.drop-item{
+    color: white;
+}
+.sort-btn{
+    color: white;
+    border: none;
+}
+.sort-btn:hover{
+    border: 1px solid white;
+    border-radius: 15px;
+}
