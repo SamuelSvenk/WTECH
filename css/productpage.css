@@ -35,21 +35,8 @@
 .accordion-button {
     font-family: 'Lato';
     font-style: normal;
-    background-color: #E9618E;
+    background-image: linear-gradient(to right, #6A82FB, #FC5C7D);
 
-}
-
-.accordion-button:hover {
-    background-color: #E95082;
-    
-}
-
-.accordion-button:focus {
-    background-color: #E95082;
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: #E95082;
 }
 
 .file-btn {
