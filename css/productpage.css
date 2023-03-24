@@ -5,6 +5,25 @@
     font-weight: 800;
 }
 
+.accordiontext{
+    color: white;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+}
+.accordiontext:focus{
+    color: black;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+}
+.accordiontext:not(.collapsed){
+    color: black;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+}
+
 .custom-line{
 
     background: linear-gradient(to right, #6A82FB, #FC5C7D);
@@ -26,6 +45,10 @@
 }
 
 .accordion-button:focus {
+    background-color: #E95082;
+}
+
+.accordion-button:not(.collapsed) {
     background-color: #E95082;
 }
 
