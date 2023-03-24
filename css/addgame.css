@@ -1,0 +1,29 @@
+.text-box{
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    letter-spacing: -0.05em;
+    
+}
+
+.file-btn {
+    font-family: 'Lato';
+    font-style: normal;
+    width: 164px;
+    background-color: #E9618E;
+}
+
+.file-btn:hover {
+    background-color: #E95082;
+    
+  }
+
+.secondary-container {
+    background-color: #302D30;
+    
+}

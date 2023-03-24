@@ -1,0 +1,52 @@
+.card-img{
+    background: #ABABAB;
+    object-fit:cover;
+ 
+}
+
+.btn-primary{
+    font-family: 'Lato';
+    font-style: normal;
+    background-color: #E9618E;
+}
+
+.card{
+    background: transparent;
+    border: none;
+
+}
+
+.text{
+    color: white;
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: 800;
+}
+
+.custom-line{
+
+    background: linear-gradient(to right, #6A82FB, #FC5C7D);
+    height: 3px;
+    border: none;
+    
+}
+
+.file-btn {
+    font-family: 'Lato';
+    font-style: normal;
+    width: 250px;
+    background-color: #E9618E;
+
+}
+
+.file-btn:hover {
+    background-color: #E95082;
+    
+}
+
+@media (min-width: 768px) { 
+
+
+
+}
+
