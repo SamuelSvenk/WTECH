@@ -1,0 +1,30 @@
+.secondary-container {
+    background-color: #302D30;
+    width: 1136px;
+}
+
+.submit-btn {
+    width: 164px;
+    background-color: #E9618E;
+}
+
+.submit-btn:hover {
+    background-color: #E95082;
+}
+
+.custom-checkbox:checked {
+    background-color: #E95082;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a {
+    color: #E9618E;
+}
+
+a:hover {
+    color: #E95082;
+}
+
