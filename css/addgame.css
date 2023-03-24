@@ -1,5 +1,5 @@
 .text-box{
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-style: normal;
     font-weight: 800;
     color: white;
@@ -12,7 +12,7 @@
 }
 
 .file-btn {
-    font-family: 'Lato';
+    font-family: 'Lato', sans-serif;
     font-style: normal;
     width: 164px;
     background-color: #E9618E;
