@@ -1,0 +1,37 @@
+.panel-default{
+    width: auto;
+    height: auto;
+    background: #302D30;
+    border-radius: 15px;
+}
+.text-new{
+    color: white;
+    text-align: center;
+    font-size: 40px ;
+}
+.text-contacts{
+    white-space: nowrap;
+    font-size: 36px;
+    color: white;
+}
+.text-info{
+    white-space: nowrap;
+    color: white;
+    font-size: 36px;
+    text-align: center;
+}
+@media (max-width: 575px) {
+    .text-info {
+      font-size: 28px;
+    }
+    .text-contacts {
+        font-size: 28px;
+      }
+  }
+.text-date{
+    white-space: nowrap;
+    text-align: center;
+    font-size: 36px;
+    color: white;
+    text-align: center;
+}
