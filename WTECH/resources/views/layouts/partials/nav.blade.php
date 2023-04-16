@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-custom shadow fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand logo-custom" href="../pages/homepage.html">LOGO</a>
+    <a class="navbar-brand logo-custom" href="{{ route('home') }}">LOGO</a>
     <form class="d-flex">
       <input class="form-control me-2 border-dark" type="search" placeholder="Search" aria-label="Search">
     </form>
