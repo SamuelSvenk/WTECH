@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,4 +17,10 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/home', function () {
     return view('homepage');
-});
+})->name('home');
+
+Route::get('/contacts', function () {
+    return view('contacts');
+})->name('contacts');
+
+
