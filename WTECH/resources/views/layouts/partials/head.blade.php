@@ -23,3 +23,5 @@
 <link rel="stylesheet" href="../../../css/footer.css">
 <link rel="stylesheet" href="../../../css/subnavbar.css">
 <link rel="stylesheet" href="../../../css/homepage.css">
+<link rel="stylesheet" href="../../../css/register.css">
+<link rel="stylesheet" href="../../../css/contacts.css">
