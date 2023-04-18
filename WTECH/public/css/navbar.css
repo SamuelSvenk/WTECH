@@ -8,6 +8,20 @@
       font-family: "Inter", sans-serif;
       font-weight: 900;
 }
+
+.dropdown-custom {
+  background-color: #383539;
+}
+
+.dropdown-item-custom:hover {
+  background-color: #524d53;
+}
+
+#logout-btn {
+  color: red;
+  font-weight: bold;
+}
+
 @media (max-width: 400px) {
   .logo-custom {
     display: none;

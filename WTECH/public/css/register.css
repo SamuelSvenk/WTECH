@@ -1,0 +1,34 @@
+.secondary-container {
+    background-color: #302D30;
+    width: 1136px;
+}
+
+.submit-btn {
+    width: 164px;
+    background-color: #E9618E;
+}
+
+.submit-btn:hover {
+    background-color: #E95082;
+}
+
+.custom-checkbox:checked {
+    background-color: #E95082;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.imp-link {
+    color: #E9618E;
+}
+
+.imp-link:hover {
+    color: #E95082;
+}
+
+.reg-custom-container {
+    background-color: #302D30;
+    border-radius: 15px;
+}
