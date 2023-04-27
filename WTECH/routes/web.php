@@ -5,6 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProductsController;
+use App\Http\Controllers\ProductPageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +22,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('homepage');
-})->name('home');
+Route::get("/home", [HomeController::class, "index"]) -> name("home");
 
 Route::get('/contacts', function () {
     return view('contacts');
 })->name('contacts');
+
+Route::get("/products", [ProductsController::class, "index"]) -> name("products");
+
+Route::get('/filtered-products', [ProductsController::class, 'filteredProducts']) -> name("filter");
+
+Route::get("/productpage/{title}", [ProductPageController::class, "index"]) -> name("productpage");
 
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 
