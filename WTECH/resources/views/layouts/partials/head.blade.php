@@ -27,3 +27,4 @@
 <link rel="stylesheet" href="../../../css/contacts.css">
 <link rel="stylesheet" href="../../../css/products.css">
 <link rel="stylesheet" href="../../../css/productpage.css">
+<link rel="stylesheet" href="{{ asset('css/cart.css')}}">

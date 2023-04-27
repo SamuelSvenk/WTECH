@@ -11,9 +11,14 @@
             </div>
             <p class="text">{{ $product->description }}</p>
             <div class="d-flex">
+                <form action="/cart" method="POST">
+                    @csrf
+                    <input type="hidden" name="product_id" value="{{ $product->id }}">
+                    <input type="hidden" name="quantity" value="1">
                 <button type="submit" class="btn btn-primary file-btn p-2 text-dark border-dark">Add to cart
                 <i class="bi bi-cart"></i>
                 </button>
+                </form>
             </div>
         </div>
         </div>

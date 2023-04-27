@@ -55,7 +55,7 @@
     @endif
 
     <div class="form-check mt-3">
-        <input class="form-check-input custom-checkbox cursor-pointer" type="checkbox" name="chechbox" id="checkbox">
+        <input class="form-check-input custom-checkbox cursor-pointer" type="checkbox" name="checkbox" id="checkbox">
         <label class="form-check-label text-white cursor-pointer" for="agreeCheck">
             I agree with the Terms and Conditions
         </label>
