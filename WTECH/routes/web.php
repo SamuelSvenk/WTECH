@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\ProductPageController;
 
@@ -47,3 +48,5 @@ Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/check', [LoginController::class, 'check'])->name('check');
 
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
