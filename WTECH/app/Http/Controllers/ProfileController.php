@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Product;
 
-class HomeController extends Controller
+class ProfileController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -25,12 +24,6 @@ class HomeController extends Controller
 
     public function index()
     {
-        $tag = 'new';
-
-        $products = Product::whereHas('tags', function ($query) use ($tag) {
-            $query->where('tag', $tag);
-        })->get()->take(4);
-        
-        return view('homepage', ['products' => $products]);
+        return view('profile');
     }
 }

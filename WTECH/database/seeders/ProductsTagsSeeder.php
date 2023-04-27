@@ -26,11 +26,11 @@ class ProductsTagsSeeder extends Seeder
         $tagnew = Tag::where("tag", "new")->firstorfail();
         $tagpop = Tag::where("tag", "popular")->firstorfail();
 
-        $products[0]->tags()->attach([$taga->id, $tagfps->id, $tagn->id]);
-        $products[1]->tags()->attach([$taga->id, $tagfps->id, $tagn->id]);
-        $products[2]->tags()->attach([$taga->id, $tagfps->id, $tagn->id]);
-        $products[3]->tags()->attach([$taga->id, $tagfps->id, $tagn->id]);
-        $products[4]->tags()->attach([$taga->id, $tagfps->id, $tagn->id]);
+        $products[0]->tags()->attach([$taga->id, $tagfps->id, $tagnew->id]);
+        $products[1]->tags()->attach([$taga->id, $tagfps->id, $tagnew->id]);
+        $products[2]->tags()->attach([$taga->id, $tagfps->id, $tagnew->id]);
+        $products[3]->tags()->attach([$taga->id, $tagfps->id, $tagnew->id]);
+        $products[4]->tags()->attach([$taga->id, $tagfps->id, $tagnew->id]);
         $products[5]->tags()->attach([$tagb->id, $tagmoba->id, $tagpop->id]);
         $products[6]->tags()->attach([$tagb->id, $tagmoba->id, $tagpop->id]);
         $products[7]->tags()->attach([$tagb->id, $tagmoba->id, $tagpop->id]);
