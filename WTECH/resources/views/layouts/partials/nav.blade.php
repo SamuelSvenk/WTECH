@@ -12,7 +12,7 @@
                     <i class="bi bi-person"></i>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end dropdown-custom shadow" aria-labelledby="dropdownMenuButton">
-                    <li><a class="dropdown-item text-white dropdown-item-custom" href="#">Profile</a></li>
+                    <li><a class="dropdown-item text-white dropdown-item-custom" href="{{ route('profile') }}">Profile</a></li>
                     <li><a class="dropdown-item dropdown-item-custom" id="logout-btn" href="{{ route('logout') }}">Log Out</a></li>
                 </ul>
             </div>
