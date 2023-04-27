@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-custom shadow fixed-top">
     <div class="container-fluid">
         <a class="navbar-brand logo-custom" href="{{ route('home') }}">LOGO</a>
-        <form class="d-flex">
-            <input class="form-control me-2 border-dark" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" action="{{ route('search') }}" method="GET">
+            <input class="form-control me-2 border-dark" type="search" placeholder="Search" name="search" aria-label="Search">
         </form>
         <div class="d-flex">
             @if (Auth::check())
