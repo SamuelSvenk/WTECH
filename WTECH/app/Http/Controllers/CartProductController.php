@@ -11,7 +11,13 @@ class CartProductController extends Controller
 {
     public function index()
     {
-        return view('cart');
+        $allproducts = CartProduct::where('user_id', Auth::user()->id)->get();
+
+        $totalprice = 0;
+        foreach ($allproducts as $product) {
+            $totalprice += $product->product->price * $product->quantity;
+        }
+        return view('cart')->with('cartItems', $allproducts)->with('totalprice', $totalprice);
     }
 
     public function store(Request $request)
