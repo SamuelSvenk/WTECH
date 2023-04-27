@@ -31,71 +31,23 @@
             </div>
         </div>
 
-        
-        
         <div class="container mt-5">
             <h2 class="text-new mb-4">CATALOGUE</h2>
             <div class="row justify-content-around">
-                <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                    <a href="productpage.html">
-                        <div class="card card-product">
-                            <img src="..." class="card-img-top" alt="Product 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 1</h5>
-                                <span class="text-av">Available</span>
-                                <span class="card-text">$10.00</span>
+                @foreach ($products as $product)
+                    <div class="col-lg-3 col-md-4 col-sm-5 col-6">
+                        <a href="/productpage/{{ ($product->title) }}" class="card-link">
+                            <div class="card card-product">
+                                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->title }}">
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ $product->title }}</h5>
+                                    <span class="text-av">Available</span>
+                                    <span class="card-text">{{ $product->price }}</span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                    <a href="productpage.html">
-                        <div class="card card-product">
-                            <img src="..." class="card-img-top" alt="Product 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 2</h5>
-                                <span class="text-av">Available</span>
-                                <span class="card-text">$10.00</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                    <a href="productpage.html">
-                        <div class="card card-product">
-                            <img src="..." class="card-img-top" alt="Product 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 3</h5>
-                                <span class="text-av">Available</span>
-                                <span class="card-text">$10.00</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                    <a href="productpage.html">
-                        <div class="card card-product">
-                            <img src="..." class="card-img-top" alt="Product 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 4</h5>
-                                <span class="text-av">Available</span>
-                                <span class="card-text">$10.00</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-3 col-md-4 col-sm-5 col-6">
-                    <a href="productpage.html">
-                        <div class="card card-product">
-                            <img src="..." class="card-img-top" alt="Product 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Product 5</h5>
-                                <span class="text-av">Available</span>
-                                <span class="card-text">$10.00</span>
-                            </div>
-                        </div>
-                    </a>
-                </div>
+                        </a>
+                    </div>
+                @endforeach
             </div>
         </div>
 @endsection
