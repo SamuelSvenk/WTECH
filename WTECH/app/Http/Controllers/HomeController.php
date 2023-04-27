@@ -25,7 +25,12 @@ class HomeController extends Controller
 
     public function index()
     {
-        $product = Product::where('tag', "new");
+        $tag = 'new';
+
+        $products = Product::whereHas('tags', function ($query) use ($tag) {
+            $query->where('tag', $tag);
+        })->get()->take(4);
+        
         return view('homepage', ['products' => $products]);
     }
 }
