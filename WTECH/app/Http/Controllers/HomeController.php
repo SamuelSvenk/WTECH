@@ -24,6 +24,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('homepage');
+        $product = Product::where('tag', "new");
+        return view('homepage', ['products' => $products]);
     }
 }
