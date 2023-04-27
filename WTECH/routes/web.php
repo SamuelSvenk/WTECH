@@ -6,9 +6,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductsController;
 use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\ProductPageController;
 
