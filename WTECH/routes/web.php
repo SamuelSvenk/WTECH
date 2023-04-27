@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ContactsController;
 use App\Http\Controllers\ProductsController;
@@ -57,3 +58,5 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile');
 Route::get('/cart', [CartProductController::class, 'index'])->name('cart');
 
 Route::post('/cart', [CartProductController::class, 'store'])->name('cart');
+
+Route::get('/search', [SearchController::class, 'search'])->name('search');
