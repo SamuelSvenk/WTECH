@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        @livewireStyles
         @include('layouts.partials.head') 
     </head>
     <body>
@@ -17,5 +18,6 @@
 
             @include('layouts.partials.footer')
         </div> 
+            @livewireStyles
     </body>
 </html>

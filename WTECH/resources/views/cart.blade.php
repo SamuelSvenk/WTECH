@@ -6,7 +6,7 @@
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="d-flex justify-content-between align-items-center mb-4">
                         <h1 class="text-white m-0">Your Shopping Cart</h1>
-                        <a href="homepage.html" class="text-white" style="text-decoration: none"><h2 class="text-white m-0">Continue shopping</h2></a>
+                        <a href="/home" class="text-white" style="text-decoration: none"><h2 class="text-white m-0">Continue shopping</h2></a>
                     </div>
                     
                 <div class="cartcard rounded-3 mb-4">
@@ -64,9 +64,13 @@
                             <h5 class="mb-0 text text-center text-md-start">{{$cartItem->product->price}} €</h5>
                             </div>
                             <div class="col-md-1 col-lg-1 col-xl-1 d-flex justify-content-center">
-                                <button type="button" class="btn btn-primary">
-                                    <i class="bi bi-trash-fill"></i>
-                                  </button>
+                                <form action="{{route('cart.destroy', $cartItem->id)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-primary">
+                                        <i class="bi bi-trash-fill"></i>
+                                    </button>
+                                </form>
                             </div>
                         </div>
                     </div>

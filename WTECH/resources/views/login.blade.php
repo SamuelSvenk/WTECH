@@ -34,7 +34,8 @@
         <button type="submit" value="Login" class="btn btn-primary submit-btn p-2 text-dark border-dark">LOG IN</button>
     </div>
     <div class="d-flex justify-content-center mt-1 small">
-        <label class="text-white">Don't have an account? <a href="registration.html" class="imp-link">Create one</a></label>
+        <label class="text-white">Don't have an account? <a href="/register" class="imp-link">Create one</a></label>
+
     </div>
     </form>
 </div>
