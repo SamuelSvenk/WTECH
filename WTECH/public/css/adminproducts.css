@@ -1,0 +1,31 @@
+.button-custom {
+    background-color: black;
+}
+
+.card-title {
+    font-size: 20px;
+    position: absolute;
+    top: 50px;
+    color: white;
+    left: 10px;
+    right: 0;
+    text-align: left;
+}
+
+.card {
+    width: auto;
+    height: 130px;
+    background-color: #262327;
+}
+
+.pages {
+    align-self: right;
+}
+
+.admin-search {
+    width: auto;
+}
+
+.btn-add {
+    align-self: left;
+}
