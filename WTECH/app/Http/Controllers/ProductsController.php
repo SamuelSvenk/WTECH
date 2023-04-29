@@ -28,6 +28,12 @@ class ProductsController extends Controller
     public function filteredProducts(Request $request)
     {
         $products = Product::query();
+        if ($request->input("price_asc")) {
+            $products = $products->orderby("price","asc");
+        }
+        if ($request->input("price_desc")) {
+            $products = $products->orderby("price","desc");
+        }
 
         if ($request->input("price_min")) {
             $products = $products->where("price", ">=", $request["price_min"]);
