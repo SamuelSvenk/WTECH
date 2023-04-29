@@ -21,11 +21,11 @@
     @foreach ($products as $product)
         <div class="row justify-content-center mb-3">
             <div class="col-md-12 col-xl-10">
-                <div class="card-admin shadow-0 border rounded-3">
+                <div class="card card-admin shadow-0 border rounded-3">
                 <div class="card-body">
                     <div class="row">
                     <div class="col-9">
-                        <span class="card-title-admin">{{ $product->title }}</span>
+                        <span class="card-title card-title-admin">{{ $product->title }}</span>
                     </div>
                     <div class="col-3 border-sm-start-none border-start">
                         <div class="d-flex flex-column mt-4">
