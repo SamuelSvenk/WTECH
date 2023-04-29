@@ -2,7 +2,7 @@
     background-color: black;
 }
 
-.card-title {
+.card-title-admin {
     font-size: 20px;
     position: absolute;
     top: 50px;
@@ -12,13 +12,13 @@
     text-align: left;
 }
 
-.card {
+.card-admin {
     width: auto;
     height: 130px;
     background-color: #262327;
 }
 
-.pages {
+.pages-admin {
     align-self: right;
 }
 
