@@ -68,4 +68,4 @@ Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name(
 
 Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
 
-Route::get("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
+Route::delete("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
