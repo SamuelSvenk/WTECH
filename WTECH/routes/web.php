@@ -10,6 +10,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\ProductPageController;
+use App\Http\Controllers\AdminProductsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,3 +63,7 @@ Route::post('/cart', [CartProductController::class, 'store'])->name('cart');
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('cart.destroy');
+
+Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
+
+Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
