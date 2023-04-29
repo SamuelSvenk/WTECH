@@ -11,6 +11,61 @@
     }
 }
 */
+@media (max-width: 509.98px) {
+    .custom-col {
+        width: 100%;
+        float: center;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 754.98px) {
+    .custom-col {
+        width: 100%;
+        float: center;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .custom-col {
+        width: 50%;
+        float: center;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+    .custom-col {
+        width: 33%;
+        float: center;
+    }
+}
+
+@media (min-width: 1200px) and (max-width:1399.98px){
+    .custom-col {
+        width: 33%;
+        float: center;
+    }   
+}
+@media (min-width: 1400px) {
+    .custom-col {
+        width: 25%;
+        float: center;
+    }
+}
+
+@media (min-width: 510px) and (max-width: 575.98px) {
+    .custom-col {
+        width: 50%;
+        float: center;
+    }
+}
+
+@media (min-width: 755px) and (max-width: 767.98px) {
+    .custom-col {
+        width: 50%;
+        float: center;
+    }
+
+}
 .title-text{
     font-size: 32px;
     background: -webkit-linear-gradient(0deg, #F95D80, #7081F6);
@@ -38,6 +93,9 @@
     position: absolute;
     top: 305px;
     color: white;
+    right: 170px;
+    left: 0;
+    text-align: center;
 }
 .card-title{
     font-size: 20px;
@@ -55,12 +113,18 @@
     top: 295px;
     font-size: 12px;
     color:#38C835;
+    left: 0;
+    right: 170px;
+    text-align: center;
 }
 .text-nav{
     position: absolute;
     top: 295px;
     font-size: 12px;
     color:#DFD822;
+    left: 0;
+    right: 170px;
+    text-align: center;
 }
 .card-img-top{
     width: 222px;
@@ -68,6 +132,7 @@
     background: #ABABAB;
     border-radius: 15px;
     object-fit: fill;
+    align-self: center;
 }
 /*
 @media (max-width: 575.98px) {
