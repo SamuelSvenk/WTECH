@@ -12,7 +12,7 @@
         <div class="col">
             <button type="button" class="btn btn-primary btn-sm mt-1 ml-2"> + </button>
         </div>
-        <div class="col pages">
+        <div class="col pages-admin">
             {{ $products->links('pagination::bootstrap-4') }}
         </div>
     </div>
@@ -21,15 +21,17 @@
     @foreach ($products as $product)
         <div class="row justify-content-center mb-3">
             <div class="col-md-12 col-xl-10">
-                <div class="card shadow-0 border rounded-3">
+                <div class="card-admin shadow-0 border rounded-3">
                 <div class="card-body">
                     <div class="row">
                     <div class="col-9">
-                        <span class="card-title">{{ $product->title }}</span>
+                        <span class="card-title-admin">{{ $product->title }}</span>
                     </div>
                     <div class="col-3 border-sm-start-none border-start">
                         <div class="d-flex flex-column mt-4">
-                        <button class="btn btn-outline-primary btn-sm" type="button">-</button>
+                            <form action= "{{ route('admin-delete')}}" method="get">
+                                <button name="title" value="{{ $product->title }}" class="btn btn-outline-primary btn-sm" type="submit">-</button>
+                            </form>
                         <button class="btn btn-outline-primary btn-sm mt-2" type="button"> E </button>
                         </div>
                     </div>
