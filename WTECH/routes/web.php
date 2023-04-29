@@ -67,3 +67,5 @@ Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('ca
 Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
 
 Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
+
+Route::get("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
