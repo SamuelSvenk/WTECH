@@ -64,8 +64,12 @@ Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('cart.destroy');
 
-Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
+// odkazy ku ktorym pristup ma len admin
+Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProductsController')->group(function () {
+    Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
 
-Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
+    Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
 
-Route::delete("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
+    Route::delete("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
+}
+
