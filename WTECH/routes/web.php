@@ -11,6 +11,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\AdminProductsController;
+use App\Http\Controllers\AddGameController;
+use App\Http\Controllers\EditGameController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,8 @@ Route::get('/contacts', function () {
 })->name('contacts');
 
 Route::get("/products", [ProductsController::class, "index"]) -> name("products");
+
+Route::get("/products/{platform}", [ProductsController::class, "platform"]) -> name("product-platform");
 
 Route::get('/filtered-products', [ProductsController::class, 'filteredProducts']) -> name("filter");
 
@@ -68,8 +72,16 @@ Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('ca
 Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProductsController')->group(function () {
     Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
 
-    Route::get("/adminproducts}", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
+    Route::get("/adminproducts", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
 
-    Route::delete("/adminproducts}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
+    Route::delete("/adminproducts/{id}", [AdminProductsController::class, "deleteProduct"]) -> name("admin-delete");
+
+    Route::get("/addgame", [AddGameController::class, "index"]) -> name("admin-add");
+
+    Route::post("/addgame", [AddGameController::class, "add"]) -> name("admin-save");
+
+    Route::get("/editgame/{id}", [EditGameController::class, "index"]) -> name("admin-edit");
+
+    Route::post("/editgame/{id}", [EditGameController::class, "edit"]) -> name("admin-edit-save");
 }
 
