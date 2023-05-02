@@ -5,6 +5,8 @@ use App\Models\Product;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
+use Storage\App\Public;
 
 class ProductSeeder extends Seeder
 {
@@ -15,8 +17,8 @@ class ProductSeeder extends Seeder
     {
         $products = [
             [
-                'title' => 'Product 1',
-                'description' => 'Description for Product 1',
+                'title' => 'GTA 5',
+                'description' => 'Description for GTA 5',
                 'price' => 9.99,
                 "quantity" => 10,
                 "platform" => "playstation",
@@ -119,7 +121,7 @@ class ProductSeeder extends Seeder
                 "quantity" => 0,
                 "platform" => "nintendo",
             ],
-        ];
+        ]; 
 
         foreach ($products as $productData) {
             $product = new Product();

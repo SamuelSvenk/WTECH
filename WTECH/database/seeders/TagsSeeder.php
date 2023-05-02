@@ -14,19 +14,44 @@ class TagsSeeder extends Seeder
     public function run(): void
     {
         $tags = [
-            ["tag" => "activision"],
-            ["tag" => "blizzard"],
-            ["tag" => "nintendo"],
-            ["tag" => "fps"],
-            ["tag" => "moba"],
-            ["tag" => "rpg"],
-            ["tag" => "new"],
-            ["tag" => "popular"],
+            [
+                "tag" => "activision",
+                "category" => "developer",
+            ],
+            [
+                "tag" => "blizzard",
+                "category" => "developer",
+            ],
+            [
+                "tag" => "nintendo",
+                "category" => "developer",
+            ],
+            [
+                "tag" => "fps",
+                "category" => "genre",
+            ],
+            [
+                "tag" => "moba",
+                "category" => "genre",
+            ],
+            [
+                "tag" => "rpg",
+                "category" => "genre",
+            ],
+            [
+                "tag" => "new",
+                "category" => "other",
+            ],
+            [
+                "tag" => "popular",
+                "category" => "other",
+            ],
         ];
 
         foreach ($tags as $tagsData) {
             $tag = new Tag();
             $tag->tag = $tagsData['tag'];
+            $tag->category = $tagsData['category'];
             $tag->save();
         }
     }
