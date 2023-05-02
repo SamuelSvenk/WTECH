@@ -5,12 +5,14 @@
 <div class="container mt-5">
     <div class="row">
         <div class="col">
-            <form class="d-flex" action="{{ route('adminproducts-filter') }}" method="GET">
+            <form class="d-flex" action="{{ route('admin-filter') }}" method="GET">
                 <input class="form-control border-dark" type="search" placeholder="Search" name="search" aria-label="Search">
             </form>
         </div>
         <div class="col">
-            <button type="button" class="btn btn-primary btn-sm mt-1 ml-2"> + </button>
+            <form action="{{ route('admin-add') }}" method="GET">
+                <button type="submit" class="btn btn-primary btn-sm mt-1 ml-2"> + </button>
+            </form>
         </div>
         <div class="col pages-admin">
             {{ $products->links('pagination::bootstrap-4') }}
@@ -29,10 +31,14 @@
                     </div>
                     <div class="col-3 border-sm-start-none border-start">
                         <div class="d-flex flex-column mt-4">
-                            <form action= "{{ route('admin-delete')}}" method="get">
-                                <button name="title" value="{{ $product->title }}" class="btn btn-outline-primary btn-sm" type="submit">-</button>
+                            <form action="{{ route('admin-delete', $product->id) }}" method="post">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-outline-primary btn-sm button-custom" type="submit">-</button>
                             </form>
-                        <button class="btn btn-outline-primary btn-sm mt-2" type="button"> E </button>
+                            <form action="{{ route('admin-edit', $product->id) }}" method="get">
+                                <button class="btn btn-outline-primary btn-sm mt-2" type="submit"> E </button>
+                            </form>
                         </div>
                     </div>
                     </div>
