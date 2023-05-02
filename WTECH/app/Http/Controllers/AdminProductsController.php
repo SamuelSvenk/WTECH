@@ -23,13 +23,15 @@ class AdminProductsController extends Controller
         $products = $products->paginate(12); 
         return view('adminproducts', ['products' => $products]);
     }
-
-    public function deleteProduct(Request $request)
+    
+    public function deleteProduct($id)
     {
-        $product_del = Product::where("title", "like", $request["title"]) -> delete();
+        $product_del = Product::find($id);
+        
+        $product_del-> delete();
 
         $products = Product::paginate(12);
 
-        return view("adminproducts", ["products" => $products]);
+        return view('adminproducts', ['products' => $products]);
     }
 }
