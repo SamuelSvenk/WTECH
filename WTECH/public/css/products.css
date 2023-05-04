@@ -260,11 +260,15 @@
     color: white;
 }
 .nav-filter{
-    background-color: transparent;
+    background-color: #262327;
     color: white;
-    border: 1px solid black;
-    border-radius: 15px;
+    border-radius: 5px;
     width: auto;
+    margin-bottom: 5px;
+}
+.nav-filter:hover {
+    background-color: #262327;
+    color: white;
 }
 .drop-filter{
     background-color: #262327;
@@ -274,10 +278,9 @@
     color: white;
 }
 .nav-sort{
-    background-color: transparent;
+    background-color: #262327;
     color: white;
-    border: 1px solid black;
-    border-radius: 15px;
+    border-radius: 5px;
     width: auto;
 }
 .drop-menu{
@@ -293,8 +296,8 @@
     border: none;
 }
 .sort-btn:hover{
-    border: 1px solid white;
-    border-radius: 15px;
+    background-color: #353237;
+    border-radius: 5px;
 }
 
 .spacing{
@@ -307,4 +310,29 @@
 }
 .pages{
     margin-left: 50px;
+}
+
+.pagination .active .page-link {
+    background-color: rgb(249, 93, 128, 0.85);
+    color: white;
+    border-radius: 5px;
+}
+
+.page-link:hover {
+    background-color: #353237;
+    border-radius: 5px;
+}
+
+.page-link .disabled  {
+    background-color: floralwhite;
+    color: red;
+    border-radius: 5px;
+}
+
+.pagination .page-link {
+    margin: 5px;
+}
+
+.submit-btn {
+    width: auto;
 }
