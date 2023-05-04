@@ -6,12 +6,12 @@
     <div class="row justify-content-center">
         <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
             <form action="{{ route('shipping') }}" method="post">
-            @csrf
+                @csrf
                 <div class="form-group row">
                     <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Shipping</label>
                     <div class="col-sm-10">
                         <select class="form-select fluid-right" id="categorySelect" name='shippingMethod'>
-                            <option selected>Select shipping method</option>
+                            <option selected value="">Select shipping method</option>
                             <option value="1">GLS shipping</option>
                             <option value="2">GLS parcelshop</option>
                             <option value="3">Packeta</option>
@@ -41,20 +41,28 @@
                             </ul>
                         </div>
                     </div>
+                </div>
+                @error('shippingMethod')
+                <div class="text-danger p-2">{{ $message }}</div>
+                @enderror
         </div>
-    </div>
 
-    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
+        <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
             <div class="form-group row">
                 <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Town / City</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control fluid-right" id="inputCity" name='town'
                         placeholder="Enter your city">
-                </div>
-            </div>
-    </div>
 
-    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
+                </div>
+
+            </div>
+            @error('town')
+            <div class="text-danger p-2">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
             <div class="form-group row">
                 <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Address</label>
                 <div class="col-sm-10">
@@ -62,8 +70,11 @@
                         placeholder="Enter your address">
                 </div>
             </div>
-    </div>
-    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
+            @error('address')
+            <div class="text-danger p-2">{{ $message }}</div>
+            @enderror
+        </div>
+        <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
             <div class="form-group row">
                 <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Phone Number</label>
                 <div class="col-sm-10">
@@ -71,29 +82,34 @@
                         placeholder="Enter your phone number (example: 09333333333)">
                 </div>
             </div>
-    </div>
-
-    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
-        <div class="form-group row">
-            <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Payment</label>
-            <div class="col-sm-10">
-                <select class="form-select fluid-right" name='payment' id="categorySelect">
-                    <option selected>Select payment method</option>
-                    <option value="1">Credit Card</option>
-                    <option value="2">PayPal</option>
-                    <option value="3">Cash on Delivery</option>
-                </select>
-            </div>
+            @error('phoneNumber')
+            <div class="text-danger p-2">{{ $message }}</div>
+            @enderror
         </div>
+
+        <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
+            <div class="form-group row">
+                <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Payment</label>
+                <div class="col-sm-10">
+                    <select class="form-select fluid-right" name='payment' id="categorySelect">
+                        <option selected value="">Select payment method</option>
+                        <option value="1">Credit Card</option>
+                        <option value="2">PayPal</option>
+                        <option value="3">Cash on Delivery</option>
+                    </select>
+                </div>
+
+            </div>
+            @error('payment')
+            <div class="text-danger p-2">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-primary submit-btn p-2 text-dark border-dark">SUBMIT</button>
+        </div>
+        </form>
     </div>
-    @if($errors->has('shipping'))
-    <div class="alert alert-danger mt-3">{{ $errors->first('shipping') }}</div>
-    @endif
-    <div class="d-flex justify-content-center mt-4">
-        <button type="submit" class="btn btn-primary submit-btn p-2 text-dark border-dark">SUBMIT</button>
-    </div>
-    </form>
-</div>
 </div>
 </div>
 @endsection

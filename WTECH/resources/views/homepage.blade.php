@@ -38,7 +38,7 @@
                     <div class="col-lg-3 col-md-4 col-sm-5 col-6">
                         <a href="/productpage/{{ ($product->title) }}" class="card-link">
                             <div class="card card-product">
-                                <img src="{{ asset('storage/' . $product->image) }}" class="card-img-top" alt="{{ $product->title }}">
+                                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->title }}">
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $product->title }}</h5>
                                     <span class="text-av">Available</span>
