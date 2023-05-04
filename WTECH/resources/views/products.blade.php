@@ -183,7 +183,7 @@
                                 @else
                                 <span class="text-nav">Unavailable</span>
                                 @endif
-                                <span class="card-text">{{ $product->price }}</span>
+                                <span class="card-text">{{ $product->price }} $</span>
                             </div>
                         </div>
                     </a>
