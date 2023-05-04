@@ -22,8 +22,11 @@
   font-weight: bold;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 450px) {
   .logo-custom {
     display: none;
+  }
+  .search-custom {
+    width: 144px;
   }
 }
