@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <a class="navbar-brand logo-custom" href="{{ route('home') }}">LOGO</a>
         <form class="d-flex" action="{{ route('search') }}" method="GET">
-            <input class="form-control me-2 border-dark" type="search" placeholder="Search" name="search"
+            <input class="form-control me-2 border-dark search-custom" type="search" placeholder="Search" name="search"
                 aria-label="Search">
         </form>
         <div class="d-flex">

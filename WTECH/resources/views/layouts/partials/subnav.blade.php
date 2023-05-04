@@ -2,8 +2,8 @@
     <div class="container-fluid ">
       <div class=" navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item d-block d-sm-none">
-            <a class="nav-link text-white" href="/products">CATALOGUE</a>
+          <li class="nav-item d-block d-sm-block">
+            <a class="nav-link text-white" href="{{ route('products') }}">CATALOGUE</a>
           </li>
           <li class="nav-item d-none d-sm-block">
             <a class="nav-link text-white" href="/products/playstation">PLAYSTATION</a>
