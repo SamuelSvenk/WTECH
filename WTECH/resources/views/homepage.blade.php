@@ -42,7 +42,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $product->title }}</h5>
                                     <span class="text-av">Available</span>
-                                    <span class="card-text">{{ $product->price }}</span>
+                                    <span class="card-text">{{ $product->price }} $</span>
                                 </div>
                             </div>
                         </a>
