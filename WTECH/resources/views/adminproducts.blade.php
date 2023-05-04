@@ -34,10 +34,10 @@
                             <form action="{{ route('admin-delete', $product->id) }}" method="post">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-outline-primary btn-sm button-custom" type="submit">-</button>
+                                <button class="btn btn-outline-primary btn-sm button-custom" type="submit"><i class="bi bi-x-lg"></button>
                             </form>
                             <form action="{{ route('admin-edit', $product->id) }}" method="get">
-                                <button class="btn btn-outline-primary btn-sm mt-2" type="submit"> E </button>
+                                <button class="btn btn-outline-primary btn-sm mt-2" type="submit"><i class="bi bi-pencil-square"></button>
                             </form>
                         </div>
                     </div>
