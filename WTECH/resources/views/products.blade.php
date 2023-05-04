@@ -16,7 +16,7 @@
                             <div class="form-group">
                                 <input type="number" name="price_min" class="form-control" placeholder="$0">
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-2">
                                 <input type="number" name="price_max" class="form-control" placeholder="$1,000">
                             </div>
                         </div>
@@ -129,7 +129,7 @@
                             <label class="form-check-label text-label" for="fpsCheck">FPS</label>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary submit-btn p-2 text-dark border-dark">SUBMIT</button>
+                        <button type="submit" class="btn btn-primary submit-btn p-2 text-dark border-dark mt-3">SUBMIT</button>
                     </div>
                 </div>
                 </form>
