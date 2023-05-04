@@ -2,20 +2,20 @@
     <div class="container-fluid ">
       <div class=" navbar-collapse" id="navbarNav">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item d-block d-sm-none">
-            <a class="nav-link text-white" href="/products">CATALOGUE</a>
+          <li class="nav-item d-block d-sm-block">
+            <a class="nav-link text-white" href="{{ route('products') }}">CATALOGUE</a>
           </li>
           <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white" href="/products/playstation">PLAYSTATION</a>
+            <a class="nav-link text-white" href="#">PLAYSTATION</a>
           </li>
           <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white" href="/products/nintendo">NINTENDO</a>
+            <a class="nav-link text-white" href="#">NINTENDO</a>
           </li>
           <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white" href="/products/pc">PC</a>
+            <a class="nav-link text-white" href="#">PC</a>
           </li>
           <li class="nav-item d-none d-sm-block">
-            <a class="nav-link text-white" href="/products/xbox">XBOX</a>
+            <a class="nav-link text-white" href="#">XBOX</a>
           </li>
         </ul>
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
