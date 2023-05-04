@@ -13,6 +13,7 @@ use App\Http\Controllers\ProductPageController;
 use App\Http\Controllers\AdminProductsController;
 use App\Http\Controllers\AddGameController;
 use App\Http\Controllers\EditGameController;
+use App\Http\Controllers\ShippingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,6 +70,10 @@ Route::post('/cart/{id}', [CartProductController::class, 'update'])->name('cart.
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('cart.destroy');
+
+Route::get('/shipping', [ShippingController::class, 'index'])->name('shipping');
+
+Route::post('/shipping', [ShippingController::class, 'store'])->name('shipping');
 
 // odkazy ku ktorym pristup ma len admin
 Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProductsController')->group(function () {
