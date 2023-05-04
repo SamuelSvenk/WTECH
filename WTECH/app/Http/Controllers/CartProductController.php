@@ -22,9 +22,18 @@ class CartProductController extends Controller
 
     public function store(Request $request)
     {
+
+
         $request->validate([
             'quantity' => 'required|integer|min:1',
         ]);
+
+        if(CartProduct::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->exists()){
+            $cartProduct = CartProduct::where('user_id', Auth::user()->id)->where('product_id', $request->product_id)->first();
+            $cartProduct->quantity += $request->quantity;
+            $cartProduct->save();
+            return redirect()->route('cart');
+        }
 
         $cartProduct = new CartProduct();
         $cartProduct->user_id = Auth::user()->id;
@@ -35,11 +44,21 @@ class CartProductController extends Controller
         return redirect()->route('cart');
     }
 
-    // Delete product from cart
     public function destroy($id)
     {
         $cartProduct = CartProduct::find($id);
         $cartProduct->delete();
         return redirect()->route('cart')->with('success', 'Product deleted successfully');
     }
+
+    public function update(Request $request, $id)
+    {
+        $cartProduct = CartProduct::find($id);
+        $cartProduct->quantity = $request->input('quantity');
+        $cartProduct->save();
+
+        return response()->json(['quantity' => $cartProduct->quantity,
+        'price' => $cartProduct->product->price * $cartProduct->quantity,]);
+    }
+
 }

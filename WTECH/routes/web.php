@@ -64,6 +64,8 @@ Route::get('/cart', [CartProductController::class, 'index'])->name('cart');
 
 Route::post('/cart', [CartProductController::class, 'store'])->name('cart');
 
+Route::post('/cart/{id}', [CartProductController::class, 'update'])->name('cart.update');
+
 Route::get('/search', [SearchController::class, 'search'])->name('search');
 
 Route::delete('/cart/{id}', [CartProductController::class, 'destroy'])->name('cart.destroy');
@@ -83,5 +85,5 @@ Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProdu
     Route::get("/editgame/{id}", [EditGameController::class, "index"]) -> name("admin-edit");
 
     Route::post("/editgame/{id}", [EditGameController::class, "edit"]) -> name("admin-edit-save");
-}
+});
 
