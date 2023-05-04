@@ -1,25 +1,25 @@
 .text{
     color: white;
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
 }
 
 .accordiontext{
     color: white;
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
 }
 .accordiontext:focus{
     color: black;
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
 }
 .accordiontext:not(.collapsed){
     color: black;
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
 }
@@ -33,14 +33,14 @@
 }
 
 .accordion-button {
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     background-image: linear-gradient(to right, #6A82FB, #FC5C7D);
 
 }
 
 .file-btn {
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     width: 250px;
     background-color: #E9618E;
