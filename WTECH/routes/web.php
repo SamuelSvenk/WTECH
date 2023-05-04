@@ -77,7 +77,7 @@ Route::post('/shipping', [ShippingController::class, 'store'])->name('shipping')
 
 // odkazy ku ktorym pristup ma len admin
 Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProductsController')->group(function () {
-    Route::get("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
+    Route::post("/adminproducts", [AdminProductsController::class, "index"]) -> name("adminproducts");
 
     Route::get("/adminproducts", [AdminProductsController::class, "filterProducts"]) -> name("adminproducts-filter");
 
