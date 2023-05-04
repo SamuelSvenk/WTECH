@@ -7,7 +7,7 @@
         <div class="col-md-6 bg-dark rounded-5 p-5 ">
             <h1 class="display-4 text">{{ $product->title }}</h1>
             <div class="fs-5 mb-5">
-                <p class="text">{{ $product->price }}</p>
+                <p class="text">{{ $product->price }} $</p>
             </div>
             <p class="text">{{ $product->description }}</p>
             <div class="d-flex">
