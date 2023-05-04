@@ -60,5 +60,10 @@ class CartProductController extends Controller
         return response()->json(['quantity' => $cartProduct->quantity,
         'price' => $cartProduct->product->price * $cartProduct->quantity,]);
     }
+    
+    static public function clear()
+    {
+        CartProduct::where('user_id', Auth::user()->id)->delete();
+    }
 
 }
