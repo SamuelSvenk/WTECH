@@ -5,7 +5,7 @@
 }
 
 .btn-primary{
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     background-color: #E9618E;
 }
@@ -18,7 +18,7 @@
 
 .text{
     color: white;
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 800;
 }
@@ -32,7 +32,7 @@
 }
 
 .file-btn {
-    font-family: 'Lato';
+    font-family: 'Inter';
     font-style: normal;
     width: 250px;
     background-color: #E9618E;
