@@ -1,3 +1,7 @@
+.carousel-img{
+    object-fit: cover;
+}
+
 .carousel-inner{
     background: #ABABAB;
     border-radius: 30px;
