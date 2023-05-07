@@ -79,7 +79,7 @@
                 <label for="inputName" class="text-white col-sm-2 col-form-label h-4 px-4">Phone Number</label>
                 <div class="col-sm-10">
                     <input type="text" class="form-control fluid-right" name='phoneNumber' id="inputPhoneNumber"
-                        placeholder="Enter your phone number (example: 09333333333)">
+                        placeholder="Enter your phone number (example: 0933333333)">
                 </div>
             </div>
             @error('phoneNumber')

@@ -10,22 +10,20 @@
             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
         <div class="carousel-inner rounded" style="width: 1192; height: 273px; background-color: #ABABAB"> 
-            @foreach ($product->tags as $tag)
-                @if ($tag->tag == 'popular')
-                    <div class="carousel-item active">
-                        <img src="{{ 'storage/' . Str::after($product->images->first()->image_path, 'public/') }}" class="d-block center w-100" alt="...">
-                    </div>
-                @endif
-            @endforeach
-            <!--<div class="carousel-item active">
-                <img src="..." class="d-block center w-100" alt="...">
+            <!-- @foreach ($productspop as $product)
+                <div class="carousel-item active">
+                    <img src="{{ 'storage/' . Str::after($product->images->first()->image_path, 'public/') }}" class="carousel-img d-block center w-100" alt="...">
+                </div>
+            @endforeach -->
+            <div class="carousel-item active">
+                <img src="{{ 'storage/original_images/home_1.jpg' }}" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
+                <img src="{{ 'storage/original_images/home_2.jpg' }}" class="d-block w-100" alt="...">
             </div>
             <div class="carousel-item">
-                <img src="..." class="d-block w-100" alt="...">
-            </div>-->
+                <img src="{{ 'storage/original_images/home_3.jpg' }}" class="d-block w-100" alt="...">
+            </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -49,7 +47,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $product->title }}</h5>
                             <span class="text-av">Available</span>
-                            <span class="card-text">{{ $product->price }}</span>
+                            <span class="card-text">{{ $product->price }}$</span>
                         </div>
                     </div>
                 </a>
