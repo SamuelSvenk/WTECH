@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Tag;
+use App\Models\Image;
 
 
 class AddGameController extends Controller
@@ -30,11 +31,9 @@ class AddGameController extends Controller
             "devs" => "required",
             "platform" => "required",
         ]);
-        $image_path = $request->file('image')->store('image', 'public');
 
         $Product = new Product();
         $Product->title = $request->input("title");
-        $Product->image = $image_path;
         $Product->price = $request->input("price");
         $Product->quantity = $request->input("quantity");
         $Product->description = $request->input("description");
@@ -46,6 +45,19 @@ class AddGameController extends Controller
         $tag_d = Tag::where("tag", "like",$request["devs"]) ->firstorfail();
 
         $Product->save();
+
+        
+        $image = $request->file('image');
+        
+        $path = $image->store('public/image');
+        $imageName = pathinfo($image, PATHINFO_FILENAME);
+        $newImage = new Image;
+        $newImage->name = $imageName;
+        $newImage->image_path = $path;
+        $newImage->save();
+
+        $Product->images()->attach([$newImage->id]);
+        
 
         $Product->tags()->attach([$tag_g->id, $tag_d->id]);
 

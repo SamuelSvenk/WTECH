@@ -32,6 +32,6 @@ class AdminProductsController extends Controller
 
         $products = Product::paginate(12);
 
-        return view('adminproducts', ['products' => $products]);
+        return redirect('adminproducts')->with('products', $products);
     }
 }

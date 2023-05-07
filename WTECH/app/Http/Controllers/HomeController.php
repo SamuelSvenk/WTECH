@@ -26,11 +26,16 @@ class HomeController extends Controller
     public function index()
     {
         $tag = 'new';
+        $pop = 'popular';
 
         $products = Product::whereHas('tags', function ($query) use ($tag) {
             $query->where('tag', $tag);
         })->get()->take(4);
         
-        return view('homepage', ['products' => $products]);
+        $productspop = Product::whereHas('tags', function ($query) use ($pop) {
+            $query->where('tag', $pop);
+        })->get();
+
+        return view('homepage', ['products' => $products, 'productspop' => $productspop]);
     }
 }

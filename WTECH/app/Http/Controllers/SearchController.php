@@ -17,7 +17,9 @@ class SearchController extends Controller
 
         $products = Product::where('title', 'like', "%$query%");
 
+        $platform = "none";
+
         $products = $products->paginate(12); 
-        return view('products', ['products' => $products]);
+        return view('products', ["platform" => $platform, 'products' => $products]);
     }
 }

@@ -41,7 +41,7 @@ class ShippingController extends Controller
             'shippingMethod' => 'required',
             'town' => ['required', 'max:255', 'string'],
             'address' => ['required', 'max:255', 'string'],
-            'phoneNumber' => ['required', 'regex:/(09)[0-9]{9}/'],
+            'phoneNumber' => ['required', 'regex:/(09)[0-9]{8}/'],
             'payment' => 'required'
         ]);
         if ($validator->fails()) {
