@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    <form action="{{ route('admin-back') }}" method="GET">
+        <button type="submit" class="btn btn-primary file-btn p-2 text-dark border-dark">GO BACK</button>
+    </form>
     <div class="container mt-5">
         <h1 class="text-white mb-3">Pick a picture</h1>
 
@@ -12,15 +15,13 @@
                 <div class="mb-5">
                     <i class="fas fa-image fa-5x"></i>
                 </div>
-                <p class="text-box mb-0">Drag and drop a picture here<br>or</p>
+                <p class="text-box mb-0">Upload one image here<br>or</p>
 
                 <div class="mb-5">
                     <label for="imageUpload" class="btn btn-primary file-btn p-2 text-dark border-dark">Select file</label>
                     <input type="file" name="image" id="imageUpload" hidden>
                 </div>
             </div>
-
-                <!-- Inputs for a new game -->
 
             <div class="container mt-5">
                 <div class="row justify-content-center">
@@ -74,15 +75,6 @@
                         <label for="inputName" class="text-white col-sm-2 col-form-label h-4">System Requirements</label>
                         <div class="col-sm-10">
                             <input type="text" name="system_requirements" class="form-control fluid-right" id="inputSurname">
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
-                        <div class="form-group row">
-                        <label for="inputName" class="text-white col-sm-2 col-form-label h-4">Release Date</label>
-                        <div class="col-sm-10">
-                            <input type="datetime-local" name="release_date" class="form-control fluid-right" id="inputSurname">
                         </div>
                         </div>
                     </div>

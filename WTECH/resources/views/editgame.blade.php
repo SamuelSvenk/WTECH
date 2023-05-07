@@ -1,10 +1,30 @@
 @extends('layouts.app')
 
 @section('content')
+    <form action="{{ route('admin-back') }}" method="GET">
+        <button type="submit" class="btn btn-primary file-btn p-2 text-dark border-dark">GO BACK</button>
+    </form>
     <div class="container mt-5">
-        <h1 class="text-white mb-3">Change the picture</h1>
+        <h1 class="text-white mb-3">Delete or add pictures</h1>
 
         <!-- Drop files -->
+        <div class="row">
+            @foreach ($product->images as $image)
+                <div class="col-3 mb-3">
+                    <img src="{{ asset('storage/' . Str::after($image->image_path, 'public/')) }}" class="img-thumbnail" alt="{{ $image->name }}">
+                    <div class="mt-2">
+                        <form action="{{ route('admin-edit-delete', $product->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                            @if ($product->images->count() > 1)
+                                <button type="submit" name="image_del" class="btn btn-danger delete-image" value="{{ $image->id }}">Delete</button>
+                            @endif
+                        </form>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+        
         <form action="{{ route('admin-edit-save', $product->id) }}" method="POST" enctype="multipart/form-data">
         @csrf
         @method('POST')
@@ -12,16 +32,18 @@
                 <div class="mb-5">
                     <i class="fas fa-image fa-5x"></i>
                 </div>
-                <p class="text-box mb-0">Drag and drop a picture here<br>or</p>
-
+                <p class="text-box mb-0">Upload image here<br>or</p>
                 <div class="mb-5">
-                    <label for="imageUpload" class="btn btn-primary file-btn p-2 text-dark border-dark">Select file</label>
-                    <input type="file" name="image" id="imageUpload" hidden>
+                    <label for="imageUpload" class="btn btn-primary file-btn p-2 text-dark border-dark">Select image</label>
+                    <input type="file" name="images[]" id="imageUpload" multiple="multiple" hidden>
                 </div>
             </div>
-
+            <div class="d-flex justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary file-btn p-2 text-dark border-dark">SUBMIT</button>
+            </div>
+        
                 <!-- Inputs for a new game -->
-
+            <h1 class="text-white mb-3">Edit Data</h1>
             <div class="container mt-5">
                 <div class="row justify-content-center">
                     <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
@@ -74,15 +96,6 @@
                         <label for="inputName" class="text-white col-sm-2 col-form-label h-4">System Requirements</label>
                         <div class="col-sm-10">
                             <input type="text" name="system_requirements" value="{{ old('system_requirements', $product->system_requirements) }}" class="form-control fluid-right" id="inputSurname">
-                        </div>
-                        </div>
-                    </div>
-
-                    <div class="container p-2 mb-3 rounded-3 secondary-container md-3">
-                        <div class="form-group row">
-                        <label for="inputName" class="text-white col-sm-2 col-form-label h-4">Release Date</label>
-                        <div class="col-sm-10">
-                            <input type="datetime-local" name="release_date" value="{{ old('release_date', $product->release_date) }}" class="form-control fluid-right" id="inputSurname">
                         </div>
                         </div>
                     </div>

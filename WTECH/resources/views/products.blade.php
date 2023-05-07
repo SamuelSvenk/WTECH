@@ -5,7 +5,7 @@
 @section('content')
     <div class="row">
         <div class="col-lg-2 col-md-3 col-sm-4 d-none d-sm-block">
-            <form action="{{route('filter')}}" method="get">
+            <form action="{{route('filter', $platform)}}" method="get">
             <div class="card-filter card">
                 <header class="card-header border-0">
                     <h6 class="title-text">PRICE</h6>
@@ -140,15 +140,11 @@
                             <button class="btn sort-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                                 Sort By
                             </button>
-                            <form action="{{route('filter')}}" method="get">
+                            <form action="{{route('filter', $platform)}}" method="get">
                             @csrf
                                 <div class="dropdown-menu drop-menu" aria-labelledby="dropdownMenuButton">
                                     <button type="submit" name="price_asc" value="price_asc" class="dropdown-item drop-item">Price: Low to High</button>
                                     <button type="submit" name="price_desc" value="price_desc" class="dropdown-item drop-item">Price: High to Low</button>
-                                    <button type="submit" name="size_asc" value="size_asc" class="dropdown-item drop-item">Size: Small to Large</button>
-                                    <button type="submit" name="size_desc" value="size_desc" class="dropdown-item drop-item">Size: Large to Small</button>
-                                    <button type="submit" name="age_asc" value="age_asc" class="dropdown-item drop-item">Age: New to Old</button>
-                                    <button type="submit" name="age_desc" value="age_desc" class="dropdown-item drop-item">Age: Old to New</button>
                                 </div>
                             </form>
                             </div>
@@ -175,7 +171,7 @@
                 <div class="custom-col">
                     <a href="/productpage/{{ ($product->title) }}" class="card-link">
                         <div class="card card-product">
-                            <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->title }}">
+                            <img src="{{ asset('storage/' . Str::after($product->images->first()->image_path, 'public/')) }}" class="card-img-top" alt="{{ $product->title }}">
                             <div class="card-body">
                                 <h5 class="card-title">{{ $product->title }}</h5>
                                 @if ($product->quantity > 0)
@@ -183,7 +179,7 @@
                                 @else
                                 <span class="text-nav">Unavailable</span>
                                 @endif
-                                <span class="card-text">{{ $product->price }} $</span>
+                                <span class="card-text">{{ $product->price }}$</span>
                             </div>
                         </div>
                     </a>
