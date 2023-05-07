@@ -26,7 +26,6 @@ class AddGameController extends Controller
             "description" => "required|min:0",
             "more_info" => "required|min:0",
             "system_requirements" => "required|min:0",
-            "release_date" => "required",
             "genre" => "required",
             "devs" => "required",
             "platform" => "required",
@@ -41,7 +40,6 @@ class AddGameController extends Controller
         $Product->description = $request->input("description");
         $Product->more_info = $request->input("more_info");
         $Product->system_requirements = $request->input("system_requirements");
-        $Product->release_date = $request->input("release_date");
         $Product->platform = $request["platform"];
 
         $tag_g = Tag::where("tag", "like", $request["genre"]) -> firstorfail();
@@ -66,5 +64,4 @@ class AddGameController extends Controller
 
         return redirect('adminproducts')->with('products', $products);
     }
-    
 }

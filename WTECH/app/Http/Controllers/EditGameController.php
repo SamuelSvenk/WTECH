@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\Tag;
+use App\Models\Image;
 
 class EditGameController extends Controller
 {
@@ -15,24 +16,28 @@ class EditGameController extends Controller
 
         return view('editgame', ["product" => $product, "tags" => $tags]);
     }
-    
+
     public function edit($id, Request $request)
     {
-        /*$request->validate([
-            "image" => "image|mimes:jpg,png,jpeg,gif,svg|max:2048",
-            "title" => "unique:products,title|min:1",
-            "price" => "numeric|min:0",
-            "quantity" => "numeric|min:0",
-            "description" => "min:0",
-            "more_info" => "min:0",
-            "system_requirements" => "min:0",
-        ]);*/
-
         $Product = Product::find($id);
-        if ($request->has("image")) 
+
+        if ($request->has("images")) 
         {
-            $image_path = $request->file('image')->store('image', 'public');
-            $Product->image = $image_path;
+            $images = $request->file('images');
+
+            foreach ($images as $image) {
+                $path = $image->store('public/image');
+                $imageName = pathinfo($image, PATHINFO_FILENAME);
+                $newImage = new Image;
+                $newImage->name = $imageName;
+                $newImage->image_path = $path;
+                $newImage->save();
+
+                $Product->images()->attach([$newImage->id]);
+            }
+
+            //$image_path = $request->file('image')->store('image', 'public');
+            //$Product->image = $image_path;
         }
 
         $Product->title = $request->input("title");
@@ -70,6 +75,26 @@ class EditGameController extends Controller
             $Product->tags()->attach([$tag_pop->id]);
         }
 
+        $product = Product::find($id);
+        $tags = Tag::all();
+
+        return view('editgame', ["product" => $product, "tags" => $tags]);
+    }
+
+    public function delete($id, Request $request)
+    {
+        $product = Product::find($id);
+        $image = Image::find($request["image_del"]);
+        $product->images()->detach($image);
+
+        $product = Product::find($id);
+        $tags = Tag::all();
+
+        return view('editgame', ["product" => $product, "tags" => $tags]);
+    }
+
+    public function back()
+    {
         $products = Product::paginate(12);
 
         return redirect('adminproducts')->with('products', $products);
