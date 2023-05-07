@@ -36,6 +36,8 @@ class CartProductController extends Controller
         $cartProduct = new CartProduct();
         $cartProduct->user_id = Auth::user()->id;
         $cartProduct->product_id = $request->product_id;
+        $cartProduct->quantity = $request->quantity;
+        $cartProduct->save();
         
         return redirect()->route('cart');
     }
