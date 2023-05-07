@@ -39,7 +39,7 @@ Route::get("/products", [ProductsController::class, "index"]) -> name("products"
 
 Route::get("/products/{platform}", [ProductsController::class, "platform"]) -> name("product-platform");
 
-Route::get('/filtered-products', [ProductsController::class, 'filteredProducts']) -> name("filter");
+Route::get('/filtered-products/{platform}', [ProductsController::class, 'filteredProducts']) -> name("filter");
 
 Route::get("/productpage/{title}", [ProductPageController::class, "index"]) -> name("productpage");
 
@@ -90,5 +90,9 @@ Route::middleware(['auth', 'admin'])->namespace('App\Http\Controllers\AdminProdu
     Route::get("/editgame/{id}", [EditGameController::class, "index"]) -> name("admin-edit");
 
     Route::post("/editgame/{id}", [EditGameController::class, "edit"]) -> name("admin-edit-save");
+    
+    Route::delete("/editgame/{id}", [EditGameController::class, "delete"]) -> name("admin-edit-delete");
+
+    Route::get("/editgame", [EditGameController::class, "back"]) -> name("admin-back");
 });
 
